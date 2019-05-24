@@ -10,6 +10,8 @@ def keersommen(totaan):
     alleantw = 0
     goedeantw = 0
     start_time = time.time()
+    antwgoed = ['Heel goed!', 'Super!', 'Ga zo door!']
+    antwfout = ['Jammer!', 'Probeer de volgende eens', 'Helaas!']
 
     while goedeantw < 5:
         a = (random.randint(1, totaan))
@@ -19,10 +21,10 @@ def keersommen(totaan):
         if reactie == antwoord:
             goedeantw = goedeantw + 1
             alleantw = alleantw + 1
-            print("Heel goed!")
+            print(random.choice(antwgoed))
         else:
             alleantw = alleantw + 1
-            print("Ai, dat is helaas fout...")
+            print(random.choice(antwfout))
     print("Je scoorde " + str(goedeantw / alleantw * 100) + "% goed!")
     print("En je deed daar " + str(time.time() - start_time) + " seconden over.")
 
